@@ -16,7 +16,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
     async def __call__(self, receive, send):
         self.channel_layer = get_channel_layer(self.channel_layer_alias)
         if self.channel_layer is not None:
-            self.channel_name = 'lobby'
+            self.channel_name = self.scope['url_route']['kwargs']['room_name']
             self.channel_receive = functools.partial(
                 self.channel_layer.receive, self.channel_name
             )
