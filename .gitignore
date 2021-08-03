@@ -1,0 +1,11 @@
+django_redis_example/venv
+redis_example/env
+.idea/
+.env
+
+*.pyc
+migrations/
+
+__pycache__/
+
+media/
